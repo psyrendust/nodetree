@@ -21,14 +21,11 @@
   "bin": {
     "nodetree": "cli.js"
   },
+  "main": "index.js",
   "directories": {
     "man": "man/man.1"
   },
   "scripts": {},
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/psyrendust/nodetree.git"
