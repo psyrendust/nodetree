@@ -1,0 +1,46 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "NODETREE" "1" "July 2014" "" ""
+.
+.SH "NAME"
+\fBnodetree\fR \- list contents of directories in a tree\-like format similar to the Tree Command \fIhttp://mama\.indstate\.edu/users/ice/tree/\fR\.
+.
+.SH "SYNOPSIS"
+\fBnodetree\fR [\fB\-ad\fR] [\fB\-L\fR \fIlevel\fR] [\fB\-\-noreport\fR] [\fB\-\-version\fR] [\fB\-\-help\fR] [\fB\-\-prune\fR] [\fIdirectory\fR \.\.\.]
+.
+.SH "DESCRIPTION"
+\fINodetree\fR is a recursive directory listing program that produces a depth indented listing of files\. With no arguments, \fInodetree\fR lists the files in the current directory\. When directory arguments are given, \fInodetree\fR lists all the files and/or directories found in the given directories each in turn\. Upon completion of listing all files/directories found, \fInodetree\fR returns the total number of files and/or directories listed\. \fINodetree\fR is heavily inspired by the Tree Command \fIhttp://mama\.indstate\.edu/users/ice/tree/\fR\.
+.
+.SH "OPTIONS"
+\fINodetree\fR understands the following command line switches:
+.
+.TP
+\fB\-a\fR
+All files are printed\. By default tree does not print hidden files (those beginning with a dot \'\.\')\. In no event does tree print the file system constructs \'\.\' (current directory) and \'\.\.\' (previous directory)\.
+.
+.TP
+\fB\-d\fR
+List directories only\.
+.
+.TP
+\fB\-L\fR \fIlevel\fR
+Max display depth of the directory tree\.
+.
+.TP
+\fB\-\-prune\fR
+Makes tree prune empty directories from the output\.
+.
+.TP
+\fB\-\-noreport\fR
+Omits printing of the file and directory report at the end of the tree listing\.
+.
+.TP
+\fB\-\-version\fR
+Outputs the version of nodetree\.
+.
+.SH "AUTHOR"
+Written by Larry Gordon
+.
+.SH "COPYRIGHT"
+The MIT License (MIT) \fIhttp://psyrendust\.mit\-license\.org/2014\fR

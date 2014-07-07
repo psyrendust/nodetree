@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' value='text/html;charset=utf8'>
+  <meta name='generator' value='Ronn/v0.7.3 (http://github.com/rtomayko/ronn/tree/0.7.3)'>
+  <title>nodetree(1) - list contents of directories in a tree-like format similar to the &lt;a href=&quot;http://mama.indstate.edu/users/ice/tree/&quot;&gt;Tree Command&lt;/a&gt;.</title>
+  <style type='text/css' media='all'>
+  /* style: man */
+  body#manpage {margin:0}
+  .mp {max-width:100ex;padding:0 9ex 1ex 4ex}
+  .mp p,.mp pre,.mp ul,.mp ol,.mp dl {margin:0 0 20px 0}
+  .mp h2 {margin:10px 0 0 0}
+  .mp > p,.mp > pre,.mp > ul,.mp > ol,.mp > dl {margin-left:8ex}
+  .mp h3 {margin:0 0 0 4ex}
+  .mp dt {margin:0;clear:left}
+  .mp dt.flush {float:left;width:8ex}
+  .mp dd {margin:0 0 0 9ex}
+  .mp h1,.mp h2,.mp h3,.mp h4 {clear:left}
+  .mp pre {margin-bottom:20px}
+  .mp pre+h2,.mp pre+h3 {margin-top:22px}
+  .mp h2+pre,.mp h3+pre {margin-top:5px}
+  .mp img {display:block;margin:auto}
+  .mp h1.man-title {display:none}
+  .mp,.mp code,.mp pre,.mp tt,.mp kbd,.mp samp,.mp h3,.mp h4 {font-family:monospace;font-size:14px;line-height:1.42857142857143}
+  .mp h2 {font-size:16px;line-height:1.25}
+  .mp h1 {font-size:20px;line-height:2}
+  .mp {text-align:justify;background:#fff}
+  .mp,.mp code,.mp pre,.mp pre code,.mp tt,.mp kbd,.mp samp {color:#131211}
+  .mp h1,.mp h2,.mp h3,.mp h4 {color:#030201}
+  .mp u {text-decoration:underline}
+  .mp code,.mp strong,.mp b {font-weight:bold;color:#131211}
+  .mp em,.mp var {font-style:italic;color:#232221;text-decoration:none}
+  .mp a,.mp a:link,.mp a:hover,.mp a code,.mp a pre,.mp a tt,.mp a kbd,.mp a samp {color:#0000ff}
+  .mp b.man-ref {font-weight:normal;color:#434241}
+  .mp pre {padding:0 4ex}
+  .mp pre code {font-weight:normal;color:#434241}
+  .mp h2+pre,h3+pre {padding-left:0}
+  ol.man-decor,ol.man-decor li {margin:3px 0 10px 0;padding:0;float:left;width:33%;list-style-type:none;text-transform:uppercase;color:#999;letter-spacing:1px}
+  ol.man-decor {width:100%}
+  ol.man-decor li.tl {text-align:left}
+  ol.man-decor li.tc {text-align:center;letter-spacing:4px}
+  ol.man-decor li.tr {text-align:right;float:right}
+  </style>
+</head>
+<!--
+  The following styles are deprecated and will be removed at some point:
+  div#man, div#man ol.man, div#man ol.head, div#man ol.man.
+
+  The .man-page, .man-decor, .man-head, .man-foot, .man-title, and
+  .man-navigation should be used instead.
+-->
+<body id='manpage'>
+  <div class='mp' id='man'>
+
+  <div class='man-navigation' style='display:none'>
+    <a href="#NAME">NAME</a>
+    <a href="#SYNOPSIS">SYNOPSIS</a>
+    <a href="#DESCRIPTION">DESCRIPTION</a>
+    <a href="#OPTIONS">OPTIONS</a>
+    <a href="#AUTHOR">AUTHOR</a>
+    <a href="#COPYRIGHT">COPYRIGHT</a>
+  </div>
+
+  <ol class='man-decor man-head man head'>
+    <li class='tl'>nodetree(1)</li>
+    <li class='tc'></li>
+    <li class='tr'>nodetree(1)</li>
+  </ol>
+
+  <h2 id="NAME">NAME</h2>
+<p class="man-name">
+  <code>nodetree</code> - <span class="man-whatis">list contents of directories in a tree-like format similar to the <a href="http://mama.indstate.edu/users/ice/tree/">Tree Command</a>.</span>
+</p>
+
+<h2 id="SYNOPSIS">SYNOPSIS</h2>
+
+<p><code>nodetree</code>  [<code>-ad</code>]  [<code>-L</code>  <var>level</var>] [<code>--noreport</code>] [<code>--version</code>] [<code>--help</code>] [<code>--prune</code>] [<var>directory</var> ...]</p>
+
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<p><em>Nodetree</em> is a recursive directory listing program that produces a depth indented listing of files. With no arguments, <em>nodetree</em> lists the files in the current directory. When directory arguments are given, <em>nodetree</em> lists all the files and/or directories found in the given directories each in turn. Upon completion of listing all files/directories found, <em>nodetree</em> returns the total number of files and/or directories listed. <em>Nodetree</em> is heavily inspired by the <a href="http://mama.indstate.edu/users/ice/tree/">Tree Command</a>.</p>
+
+<h2 id="OPTIONS">OPTIONS</h2>
+
+<p><em>Nodetree</em> understands the following command line switches:</p>
+
+<dl>
+<dt class="flush"><code>-a</code></dt><dd><p>All files are printed. By default tree does not print hidden files (those beginning with a dot '.'). In no event does tree print the file system constructs '.' (current directory) and '..' (previous directory).</p></dd>
+<dt class="flush"><code>-d</code></dt><dd><p>List directories only.</p></dd>
+<dt><code>-L</code> <var>level</var></dt><dd><p>Max display depth of the directory tree.</p></dd>
+<dt class="flush"><code>--prune</code></dt><dd><p>Makes tree prune empty directories from the output.</p></dd>
+<dt><code>--noreport</code></dt><dd><p>Omits printing of the file and directory report at the end of the tree listing.</p></dd>
+<dt><code>--version</code></dt><dd><p>Outputs the version of nodetree.</p></dd>
+</dl>
+
+
+<h2 id="AUTHOR">AUTHOR</h2>
+
+<p>  Written by Larry Gordon</p>
+
+<h2 id="COPYRIGHT">COPYRIGHT</h2>
+
+<p>  <a href="http://psyrendust.mit-license.org/2014">The MIT License (MIT)</a></p>
+
+
+  <ol class='man-decor man-foot man foot'>
+    <li class='tl'></li>
+    <li class='tc'>July 2014</li>
+    <li class='tr'>nodetree(1)</li>
+  </ol>
+
+  </div>
+</body>
+</html>

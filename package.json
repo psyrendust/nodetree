@@ -1,0 +1,51 @@
+{
+  "name": "nodetree",
+  "private": false,
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": {
+    "name": "Larry Gordon",
+    "email": "lgordon@psyrendust.com",
+    "url": "http://psyrendust.com"
+  },
+  "description": "List contents of directories in a tree-like format similar to the Tree Command (http://mama.indstate.edu/users/ice/tree/.",
+  "keywords": [
+    "cli",
+    "directory",
+    "list",
+    "ls",
+    "recursive",
+    "tree",
+    "walk"
+  ],
+  "bin": {
+    "nodetree": "cli.js"
+  },
+  "directories": {
+    "man": "man/man.1"
+  },
+  "scripts": {},
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/psyrendust/nodetree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psyrendust/nodetree/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://psyrendust.mit-license.org/2014/license.html"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "get-stdin": "0.1.0",
+    "lodash": "2.4.1",
+    "nopt": "3.0.1"
+  }
+}
