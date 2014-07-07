@@ -35,7 +35,6 @@ function Nodetree(basepath, opts) {
   var fileCount = 0;
   var isWalking = 0;
   var options = _.extend(defaults, opts);
-  var resultsTree = [];
   var startpath = '';
 
   normalizeStartpath(basepath);
@@ -77,7 +76,7 @@ function Nodetree(basepath, opts) {
       // Replace a pipe with an indent if the parent does not have a next sibling.
       depth[depth.length-2] = chevron.indent;
     }
-    resultsTree.push(depth.join('') + file + '\n');
+    console.log(depth.join('') + file);
   }
 
 
@@ -104,13 +103,14 @@ function Nodetree(basepath, opts) {
    * @method  printResults
    */
   function printResults() {
+    var results = [];
     if (!options.noreport) {
-      resultsTree.push('\n' + dirCount + ' directories');
+      results.push('\n' + dirCount + ' directories');
       if (!options.directories) {
-        resultsTree.push(', ' + fileCount + ' files');
+        results.push(', ' + fileCount + ' files');
       }
     }
-    console.log(resultsTree.join(''));
+    console.log(results.join(''));
   }
 
 
