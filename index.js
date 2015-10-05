@@ -42,7 +42,7 @@ function Nodetree(basepath, opts) {
 
   // Start tree walking
   // ---------------------------------------------------------------------------
-  if (fs.existsSync(startpath) && fs.statSync(startpath).isDirectory()) {
+  if (fs.existsSync(startpath) && fs.lstatSync(startpath).isDirectory()) {
     console.log(basepath);
     walk(startpath, []);
   } else {
@@ -135,7 +135,7 @@ function Nodetree(basepath, opts) {
     if (options.directories) {
       // Only show directories
       children = children.filter(function optionDirectories(child) {
-        return fs.statSync(path.join(basepath, child)).isDirectory();
+        return fs.lstatSync(path.join(basepath, child)).isDirectory();
       });
     }
 
@@ -143,7 +143,7 @@ function Nodetree(basepath, opts) {
       // Exclude empty directories
       children = children.filter(function optionPrune(child) {
         var childpath = path.join(basepath, child);
-        if (fs.statSync(childpath).isDirectory()) {
+        if (fs.lstatSync(childpath).isDirectory()) {
           return (fs.readdirSync(childpath).length > 0);
         }
         return true;
@@ -177,7 +177,7 @@ function Nodetree(basepath, opts) {
         var newdepth = !!depth ? depth.slice(0) : [];
         var isLast = (index >= childrenLen);
         var childpath = path.join(basepath, child);
-        var stats = fs.statSync(childpath);
+        var stats = fs.lstatSync(childpath);
 
         if (isLast) {
           newdepth.push(chevron.last);
