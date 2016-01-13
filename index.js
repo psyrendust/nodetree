@@ -16,7 +16,8 @@ var defaults = {
   directories: false,
   level: null,
   prune: false,
-  noreport: false
+  noreport: false,
+  tofile: ''
 };
 var dotRegex = /^\.$/;
 var hiddenRegex = /^\./;
@@ -36,6 +37,7 @@ function Nodetree(basepath, opts) {
   var isWalking = 0;
   var options = _.extend(defaults, opts);
   var startpath = '';
+  var results = '';
 
   normalizeStartpath(basepath);
 
@@ -43,7 +45,7 @@ function Nodetree(basepath, opts) {
   // Start tree walking
   // ---------------------------------------------------------------------------
   if (fs.existsSync(startpath) && fs.statSync(startpath).isDirectory()) {
-    console.log(basepath);
+    results += basepath + '\n';
     walk(startpath, []);
   } else {
     console.log(basepath, '[error opening dir]');
@@ -76,7 +78,7 @@ function Nodetree(basepath, opts) {
       // Replace a pipe with an indent if the parent does not have a next sibling.
       depth[depth.length-2] = chevron.indent;
     }
-    console.log(depth.join('') + file);
+    results += depth.join('') + file + '\n';
   }
 
 
@@ -200,6 +202,14 @@ function Nodetree(basepath, opts) {
       });
     }
     checkIfComplete();
+  }
+
+  if (options.tofile) {
+    return fs.writeFile(options.tofile, results, function (err) {
+      if (err) throw err;
+    });
+  } else {
+    return console.log(results);
   }
 }
 

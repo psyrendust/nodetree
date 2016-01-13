@@ -34,7 +34,8 @@ nodetree(process.cwd(), {
   directories: false,
   level: 2,
   prune: false,
-  noreport: false
+  noreport: false,
+  tofile: 'path/to/file'
 });
 ```
 
@@ -83,6 +84,11 @@ Type: `Boolean`
 Default: `false`  
 See cli option `--noreport` below.  
 
+#### options.tofile
+Type: `String`  
+Default: `null`  
+See cli option `--tofile` below. 
+
 ## CLI OPTIONS
 
   * `-a`:
@@ -102,6 +108,9 @@ See cli option `--noreport` below.
 
   * `--version`:
     Outputs the version of nodetree.
+    
+  * `--tofile`:
+    Outputs the results to the file specified instead of the console. The file is created if it doesn't exist.
 
 ## AUTHOR
 
