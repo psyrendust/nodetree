@@ -103,6 +103,10 @@ See cli option `--noreport` below.
   * `--version`:
     Outputs the version of nodetree.
 
+## NEED HELP?
+
+Feel free to read the [Contributing Guide][contributing] or the [Changelog][changelog] if you have any questions.
+
 ## AUTHOR
 
   Written by Larry Gordon
@@ -111,3 +115,6 @@ See cli option `--noreport` below.
 ## COPYRIGHT
 
   [The MIT License (MIT)](http://psyrendust.mit-license.org/2014)
+
+[changelog]: https://github.com/psyrendust/nodetree/blob/master/CHANGELOG.md
+[contributing]: https://github.com/psyrendust/nodetree/blob/master/CONTRIBUTING.md
