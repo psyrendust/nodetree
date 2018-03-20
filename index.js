@@ -13,6 +13,8 @@ var chevron = {
 };
 var defaults = {
   all: false,
+  nodemodules: false,
+  git: false,
   directories: false,
   level: null,
   prune: false,
@@ -21,6 +23,8 @@ var defaults = {
 var dotRegex = /^\.$/;
 var hiddenRegex = /^\./;
 var newlineRegex = /[\n\r]*/g;
+var gitRegex = /^.git$/;
+var nodeModulesRegex = /^node_modules$/;
 
 
 // -----------------------------------------------------------------------------
@@ -129,6 +133,17 @@ function Nodetree(basepath, opts) {
       // Show hidden files
       children = children.filter(function optionAll(child) {
         return !child.match(hiddenRegex);
+      });
+    }
+    
+    if (!options.nodeModules) {
+      children = children.filter(function optionNodeModules(child) {
+        return !child.match(nodeModulesRegex);
+      });
+    }
+    if (!options.git) {
+      children = children.filter(function optionGit(child) {
+        return !child.match(gitRegex);
       });
     }
 

@@ -9,6 +9,8 @@ var stdin = require('get-stdin');
 
 var knownOpts = {
   'all': Boolean,
+  'nodemodules': Boolean,
+  'git': Boolean,
   'directories': Boolean,
   'help': Boolean,
   'level': Number,
@@ -17,6 +19,8 @@ var knownOpts = {
 };
 var shortHands = {
   'a': ['--all'],
+  'n': ['--nodemodules'],
+  'g': ['--git'],
   'd': ['--directories'],
   'h': ['--help'],
   'L': ['--level'],

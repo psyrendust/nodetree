@@ -5,7 +5,7 @@
 
 ## SYNOPSIS
 
-`nodetree`  \[`-ad`\]  \[`-L`  \<level>] \[`--noreport`] \[`--version`] \[`--help`] \[`--prune`] \[\<directory> ...]
+`nodetree`  \[`-ad`\]  \[`-L`  \<level>] \[`--noreport`] \[`--version`] \[`--help`] \[`--prune`] \[`--nodemodules`\] \[`--git`\] \[\<directory> ...]
 
 
 ## DESCRIPTION
@@ -63,6 +63,16 @@ Type: `Boolean`
 Default: `false`  
 See cli option `-a` below.  
 
+#### options.nodeModules
+Type: `Boolean`  
+Default: `false`  
+See cli option `-n` below.  
+
+#### options.git
+Type: `Boolean`  
+Default: `false`  
+See cli option `-g` below.  
+
 #### options.directories ####
 Type: `Boolean`  
 Default: `false`  
@@ -87,6 +97,12 @@ See cli option `--noreport` below.
 
   * `-a`:
     All files are printed. By default tree does not print hidden files (those beginning with a dot '.'). In no event does tree print the file system constructs '.' (current directory) and '..' (previous directory).
+    
+  * `-n`:
+    Lists items in the `node_modules` directory. Defaults to hidden.
+
+  * `-g`:
+    Lists items in the `.git` directory. Defaults to hidden.
 
   * `-d`:
     List directories only.

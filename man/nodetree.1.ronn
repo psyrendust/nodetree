@@ -17,6 +17,12 @@ _Nodetree_ understands the following command line switches:
 
   * `-a`:
     All files are printed. By default tree does not print hidden files (those beginning with a dot '.'). In no event does tree print the file system constructs '.' (current directory) and '..' (previous directory).
+    
+  * `-n`:
+    Lists items in the `node_modules` directory. Defaults to hidden.
+
+  * `-g`:
+    Lists items in the `.git` directory. Defaults to hidden.
 
   * `-d`:
     List directories only.
